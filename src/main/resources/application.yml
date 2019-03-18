@@ -1,0 +1,50 @@
+
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+  datasource:
+    druid:
+      url: jdbc:mysql://127.0.0.1:3306/spring-security-jwt?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+      username: root
+      password:
+      driver-class-name: com.mysql.jdbc.Driver
+      initialSize: 5
+      max-active: 150
+      max-wait: 60000
+      web-stat-filter:
+        enabled: true
+      filters: stat,wall,slf4j
+      stat-view-servlet:
+        enabled: true
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 600000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      filter:
+        slf4j:
+          enabled: true
+          statement-executable-sql-log-enable: true
+          statement-sql-pretty-format: true
+
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  typeAliasesPackage: cc.white.springsecurityjwtdemo.model
+  mapperLocations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+jwt-config:
+  header: Authorization
+  tokenHead: Bearer
+  secret: MDk4ZjZiY2Q0NjIxZDM3M1NhZGU0ZTgzMjYyN2I0ZjY=
+  expiration: 864000
+  antPermitPaths:
+    - /**/login
+    - /**/register
