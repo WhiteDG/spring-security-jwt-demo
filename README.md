@@ -26,12 +26,14 @@ POST | http://127.0.0.1:8080/login | Content-Type=application/x-www-form-urlenco
 请求方式 | url | 请求头 | 参数  | 说明
 ---|--- |--- |--- |--- 
 GET | http://127.0.0.1:8080/user | Authorization=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZXhwIjoxNTU0MTk1NDcwLCJpYXQiOjE1NTMzMzE0NzB9.ywEoftigVn9M58RBN5owABZgs6cDe2NQ1PelZ6YlWTycuJV6dNC-KTfqxe_NRZsMn2f95FPFQP4hlRdEWuiz-w | / | 获取已登录用户信息
+
 ![image](https://github.com/WhiteDG/spring-security-jwt-demo/blob/master/image/user.jpg)
 
 #### token 校验失败
 请求方式 | url | 请求头 | 参数  | 说明
 ---|--- |--- |--- |--- 
 GET | http://127.0.0.1:8080/user | / | / | 获取已登录用户信息
+
 ![image](https://github.com/WhiteDG/spring-security-jwt-demo/blob/master/image/error_token.jpg)
 
 ### 引用的开源库
